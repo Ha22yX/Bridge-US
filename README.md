@@ -2,23 +2,24 @@
 
 ![Bridge US Home](docs/pic/image.png)
 
-## What we’re building
+## Project Overview
 
-**Bridge US** is a community-first platform for international students who are new to the United States.  
-It’s designed to replace “mixed-signal” social apps where valuable advice is buried under ads, promotions, and biased recommendations.
+**Bridge US** is an early community platform for international students who are
+new to the United States.
 
-We focus on one thing: **helping new international students make safer, smarter decisions faster**—especially in high-stakes areas like housing, transportation, and scam prevention.
+The project focuses on practical student-to-student information around first
+weeks in the U.S., housing, transportation, basic life admin, and scam awareness.
 
-## What users can do (social / community features)
+## Community Features
 
-Bridge US is not just an information site — it’s a **social, community-driven platform** with user-generated content:
+The app includes a simple post and review workflow:
 
 - **Browse a feed** of community posts (only **approved** content is public).
 - **Explore by sections** (First week / Housing & move-in / Food & groceries / Transportation / Life admin / Safety & scams).
 - **Create an account, log in, and publish posts** (submissions go into a **review queue** first).
 - **Language support (EN/中文)** for UI + post language metadata (translation workflow planned).
 
-## The problem
+## Problem Area
 
 International students arrive with major information gaps:
 
@@ -27,11 +28,12 @@ International students arrive with major information gaps:
 - **Rules vary by location**: what works in one city, campus, or state can be wrong in another.
 - **Students feel isolated**: they don’t know who to ask, and they’re not sure who to trust.
 
-The result is unnecessary stress, wasted money, and avoidable harm.
+The platform is an attempt to organize this kind of practical information in a
+more searchable and moderated place.
 
-## Our solution
+## Approach
 
-Bridge US combines **real student experiences** with **human-verified reliability**, in a product that’s intentionally designed to be:
+Bridge US combines student posts with a review workflow:
 
 - **No disguised sponsored posts**: we prioritize student wellbeing over ad-driven ranking.
 - **Experience-based sharing**: real housing experiences, grocery finds, transit tips, survival checklists.
