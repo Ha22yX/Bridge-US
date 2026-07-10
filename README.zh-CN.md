@@ -9,6 +9,8 @@
     &middot;
     <a href="#快速开始">快速开始</a>
     &middot;
+    <a href="#核心能力">核心能力</a>
+    &middot;
     <a href="#技术栈">技术栈</a>
   </p>
 
@@ -24,29 +26,33 @@
 </p>
 
 <p align="center">
-  <img src="docs/pic/image.png" alt="Bridge US 原型界面截图" width="100%" />
+  <img src="docs/pic/image.png" alt="Bridge US prototype screenshot" width="100%" />
 </p>
 
-## 项目价值
+## 项目概览
 
-新国际学生常常只能从零散群聊和社交平台获取租房、交通、安全和初到美国的信息。Bridge US v1 是一个小型审核社区原型，用来把这些经验整理成可浏览的板块。
+Bridge US v1 是国际学生社区想法的第一版可运行原型。
 
-## 工作流
+它刻意保持简单：服务端渲染页面、SQLite 内容流程，以及通过审核后公开的帖子机制。
 
-- 学生按板块浏览实用帖子。
-- 注册用户提交基于经验的内容。
-- 新投稿先进入审核队列，再公开展示。
-- 审核通过的帖子形成一个简单的可信知识库。
-- 该项目作为 V2 重构前的早期产品原型。
+## 核心能力
 
-## 核心功能
+- 围绕到达、住房、交通、饮食、生活手续和安全等主题的分类经验帖。
+- 注册/登录、发帖和后台审核队列。
+- 仅公开已审核内容，形成基础可信流程。
+- `docs/` 中保留产品规划文档和截图。
+- 与 Bridge-US-V2 的关系清晰：V2 是更完整的独立重写。
 
-- 按初到美国、租房、饮食、交通、生活事务和安全等板块组织帖子。
-- 注册、登录、投稿和后台审核队列。
-- 只有审核通过的内容才公开展示。
-- 面向国际学生场景的中英文界面方向。
+## 工作方式
+
+1. 用户按分类浏览实用经验帖。
+2. 注册用户提交自己的经验内容。
+3. 管理员审核新内容后再公开。
+4. 仓库记录了 V2 重写前的早期产品方向。
 
 ## 快速开始
+
+可以用下面的命令在本地运行项目。
 
 ```bash
 git clone https://github.com/Ha22yX/Bridge-US.git
@@ -57,27 +63,44 @@ pip install -r requirements.txt
 python app.py
 ```
 
-打开 `http://127.0.0.1:5000`。相比 V2，这个 v1 仓库刻意保持简单。
+打开 `http://127.0.0.1:5000`。这个仓库是 V1 原型；更完整的产品架构请看 V2。
+
+## 配置项
+
+| 项目 | 作用 |
+| --- | --- |
+| `SECRET_KEY` | 部署前为 Flask 会话设置密钥。 |
+| SQLite 数据库 | 本地原型存储；真实使用前应备份。 |
+| 后台审核 | 通过审核队列控制公开内容。 |
+| V2 迁移 | 新增复杂功能前建议优先查看 Bridge-US-V2。 |
 
 ## 技术栈
 
 | 层级 | 技术 | 作用 |
 | --- | --- | --- |
 | 后端 | Flask | 路由、模板和会话。 |
-| 数据 | SQLite | 原型内容的本地数据库。 |
-| 国际化 | Flask-Babel | 双语界面方向。 |
+| 数据 | SQLite | 原型数据库。 |
 | 前端 | Jinja, CSS | 服务端渲染社区页面。 |
+| 文档 | Markdown | 产品规划和路线说明。 |
 
 ## 项目结构
 
 ```text
-app.py                  Flask application
-db.py                   database helpers
-templates/              community and admin pages
-static/                 CSS and static assets
-docs/                   product planning notes and screenshot
+app.py                  Flask 应用
+db.py                   数据库辅助逻辑
+templates/              社区和后台页面
+static/                 CSS 与静态资源
+docs/                   规划文档和截图
 ```
 
-## 项目说明
+## 项目状态
 
-[Bridge-US](https://github.com/Ha22yX/Bridge-US) 和 [Bridge-US-V2](https://github.com/Ha22yX/Bridge-US-V2) 目标相同，但它们是完全独立的项目。v1 是早期、较简单的 Flask 原型；v2 是更完整的 React/FastAPI 重构版本。
+早期原型。Bridge-US 和 Bridge-US-V2 目标相同，但彼此独立；V2 更完整。
+
+## 相关项目
+
+- [Bridge-US V2](https://github.com/Ha22yX/Bridge-US-V2) - 相关版本/配套项目。
+
+## 许可证
+
+当前仓库尚未声明项目级开源许可证；公开复用或分发前建议先补充 License。

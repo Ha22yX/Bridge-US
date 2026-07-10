@@ -9,6 +9,8 @@
     &middot;
     <a href="#quickstart">Quickstart</a>
     &middot;
+    <a href="#features">Features</a>
+    &middot;
     <a href="#tech-stack">Tech Stack</a>
   </p>
 
@@ -27,26 +29,30 @@
   <img src="docs/pic/image.png" alt="Bridge US prototype screenshot" width="100%" />
 </p>
 
-## Why This Exists
+## Overview
 
-New international students often rely on scattered chats and social posts for housing, transportation, safety, and first-week logistics. Bridge US v1 is a small moderated prototype for organizing that advice into searchable sections.
+Bridge US v1 is the first practical prototype of the international-student community idea.
 
-## Workflow
-
-- Students browse practical posts by section.
-- Registered users submit experience-based posts.
-- New submissions enter a review queue before becoming public.
-- Approved posts form a simple trust-oriented knowledge base.
-- The project acts as the early product prototype before the V2 rebuild.
+It is intentionally simple: server-rendered pages, a SQLite-backed content flow, and a review queue for approved public posts.
 
 ## Features
 
-- Section-based feed for first-week, housing, food, transit, life admin, and safety posts.
-- Registration, login, post submission, and admin review queue.
-- Approved-only public content for basic moderation.
-- Chinese/English direction for international-student scenarios.
+- Section-based practical posts for arrival, housing, transit, food, life admin, and safety topics.
+- Registration/login flow, post submission, and admin review queue.
+- Approved-only public content for a basic trust workflow.
+- Product-planning docs and screenshot retained in `docs/`.
+- Clear relationship to Bridge-US-V2 as the more complete independent rebuild.
+
+## How It Works
+
+1. Users browse practical posts by category.
+2. Registered users submit posts from their own experience.
+3. Admins review new submissions before publication.
+4. The repo documents the early product direction before the V2 rewrite.
 
 ## Quickstart
+
+Run the project locally with the commands below.
 
 ```bash
 git clone https://github.com/Ha22yX/Bridge-US.git
@@ -57,27 +63,44 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open `http://127.0.0.1:5000`. This v1 repo is intentionally simpler than V2.
+Open `http://127.0.0.1:5000`. Use this repo as the v1 prototype; use V2 for the fuller product architecture.
+
+## Configuration
+
+| Item | Purpose |
+| --- | --- |
+| `SECRET_KEY` | Set for Flask sessions before deployment. |
+| SQLite database | Local prototype storage; back it up before real use. |
+| Admin review | Use the review queue to keep public content controlled. |
+| V2 migration | Treat new feature work as a reason to inspect Bridge-US-V2 first. |
 
 ## Tech Stack
 
 | Layer | Technology | Role |
 | --- | --- | --- |
 | Backend | Flask | Routes, templates, and sessions. |
-| Data | SQLite | Local app database for prototype content. |
-| i18n | Flask-Babel | Bilingual UI direction. |
+| Data | SQLite | Prototype database. |
 | Frontend | Jinja, CSS | Server-rendered community pages. |
+| Docs | Markdown | Product planning and roadmap notes. |
 
-## Project Map
+## Project Layout
 
 ```text
 app.py                  Flask application
 db.py                   database helpers
 templates/              community and admin pages
 static/                 CSS and static assets
-docs/                   product planning notes and screenshot
+docs/                   planning notes and screenshot
 ```
 
-## Notes
+## Status
 
-[Bridge-US](https://github.com/Ha22yX/Bridge-US) and [Bridge-US-V2](https://github.com/Ha22yX/Bridge-US-V2) target the same product idea but are independent projects. V1 is the early/simple Flask prototype; V2 is the fuller React/FastAPI rebuild.
+Early prototype. Bridge-US and Bridge-US-V2 target the same product idea but are independent projects; V2 is more complete.
+
+## Related Projects
+
+- [Bridge-US V2](https://github.com/Ha22yX/Bridge-US-V2) - companion/version reference.
+
+## License
+
+No project-wide open-source license has been declared yet.
